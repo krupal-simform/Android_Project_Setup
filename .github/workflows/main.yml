@@ -1,10 +1,6 @@
 name: "build"
 on: 
   push:
-  workflow_dispatch:
-    inputs:
-      app_name:
-        type: string
         
 jobs:
   test:
@@ -23,14 +19,14 @@ jobs:
           pip install cookiecutter
       - name: Test cookiecutter
         run: |
-          cookiecutter . --no-input "app_name=${{ github.event.inputs.app_name }}" "repo_name=${{ github.event.inputs.app_name }}" "package_name=com.${{ github.event.inputs.app_name }}"
+          cookiecutter . --no-input "app_name=test" "repo_name=test" "package_name=comtest"
       - name : Create zip
         uses: papeloto/action-zip@v1
         with:
-          files: ${{ github.event.inputs.app_name }}/
+          files: test/
           dest: result.zip
       - name : Upload Artificact
         uses: actions/upload-artifact@v1
         with:
           name: my-artifact
-          path: ${{ github.workspace }}/result.zip
+          path: result.zip
