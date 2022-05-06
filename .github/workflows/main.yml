@@ -19,13 +19,13 @@ jobs:
           pip install cookiecutter
       - name: Test cookiecutter
         run: |
-          mkdir -p project/download 
-          cd project/download/
+          mkdir -p project 
+          cd project
           cookiecutter . --no-input
       - name : Create zip
         uses: papeloto/action-zip@v1
         with:
-          files: project/download/
+          files: project
           dest: result.zip
       - name : Upload Artificact
         uses: actions/upload-artifact@v1
