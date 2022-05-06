@@ -19,7 +19,7 @@ jobs:
           pip install cookiecutter
       - name: Test cookiecutter
         run: |
-          cookiecutter . --no-input "app_name=test" "repo_name=test" "package_nane=com.test"
+          cookiecutter . --no-input "app_name=test" "repo_name=test" "package_name=com.test"
       - name : Create zip
         uses: papeloto/action-zip@v1
         with:
