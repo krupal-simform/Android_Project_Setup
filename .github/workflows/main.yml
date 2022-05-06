@@ -20,7 +20,7 @@ jobs:
       - name: Test cookiecutter
         run: |
           mkdir -p project/download 
-          cd roject/download/
+          cd project/download/
           cookiecutter . --no-input
       - name : Create zip
         uses: papeloto/action-zip@v1
