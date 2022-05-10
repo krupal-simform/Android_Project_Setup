@@ -1,4 +1,4 @@
-name: "build"
+name: "generate"
 on: 
   workflow_dispatch:
     inputs:
